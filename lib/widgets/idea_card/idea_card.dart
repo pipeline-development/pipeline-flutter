@@ -20,11 +20,12 @@ class IdeaCard extends StatelessWidget {
         ),
         SizedBox(height: 8.0),
         ProfileSpan(
-          profile: Profile("1", "Justin Ziegler", "Software Engineer", "https://media.licdn.com/dms/image/C4E03AQGARI0YDYegKQ/profile-displayphoto-shrink_200_200/0?e=1563408000&v=beta&t=I8j_joDraFmrA3R2yKXou8xnHXlzbvxvLqNM99FaMOs")
+          // TODO :: handle the profile fetching and showing
+          profile: Profile(idea.profileID, "Justin Ziegler", "Software Engineer", "https://media.licdn.com/dms/image/C4E03AQGARI0YDYegKQ/profile-displayphoto-shrink_200_200/0?e=1563408000&v=beta&t=I8j_joDraFmrA3R2yKXou8xnHXlzbvxvLqNM99FaMOs")
         ),
         SizedBox(height: 5.0),
         IdeaDetails(idea: this.idea),
-        SizedBox(height: 10.0)
+        SizedBox(height: 100.0)
       ],
     );
   }

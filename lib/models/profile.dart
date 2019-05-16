@@ -8,7 +8,7 @@ class Profile {
 
   Profile(this.profileID, this.name, this.profession, this.avatarUri);
 
-  static Profile fromJSON(Map<String, dynamic> json) {
+  factory Profile.fromJSON(Map<String, dynamic> json) {
     if (json == null) {
       throw FormatException("Null JSON provided to Idea object");
     }

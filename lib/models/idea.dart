@@ -14,7 +14,7 @@ class Idea {
   Idea(this.ideaName, this.ideaType, this.ideaStage, this.customIDType,
       this.description, this.requests, this.profileID, this.logoUri);
 
-  static Idea fromJSON(Map<String, dynamic> json) {
+  factory Idea.fromJSON(Map<String, dynamic> json) {
     if (json == null) {
       throw FormatException("Null JSON provided to Idea object");
     }
@@ -23,7 +23,7 @@ class Idea {
       json['ideaName'],
       json['ideaType'],
       json['ideaStage'],
-      json['customIDType'],
+      json['customIdeaType'],
       json['description'],
       json['requests'],
       json['profileID'],
@@ -37,6 +37,7 @@ enum IdeaType {
   webApplication,
   generalApplication,
   hardwareSolution,
+  custom
 }
 
 enum IdeaStage {

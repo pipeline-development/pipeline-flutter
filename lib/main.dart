@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pipeline/widgets/idea_card/idea_card.dart';
-import 'package:pipeline/models/idea.dart';
+import 'package:pipeline/screens/idea_hub_home.dart';
+import 'package:pipeline/screens/applet_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pipeline',
+      routes: {
+        '/' : (context) => IdeaHubHome(title: 'Pipeline'),
+        '/applets' : (context) => AppletScreen(),
+      },
+      initialRoute: '/',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,51 +30,7 @@ class MyApp extends StatelessWidget {
           title: TextStyle(
             color: Colors.black54,
           )
-        )
-      ),
-      home: MyHomePage(title: 'Pipeline'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        leading: IconButton(icon: Icon(Icons.apps), onPressed: null),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.dashboard), onPressed: null)
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: IdeaCard(idea: Idea(
-          "ScoreCast",
-          "Mobile App",
-          "Prototyping",
-          null,
-          "A mobile application designed to help smaller teams and leagues provide real-time score tracking to their audiences.",
-          "In need of a project manager who is capable of managing three developers.",
-          "1",
-          "https://scorecast.github.io/static/img/1024square.png"
-        )),
+        ),
       ),
     );
   }
